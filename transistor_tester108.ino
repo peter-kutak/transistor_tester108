@@ -34,8 +34,8 @@
 //#define LCD_I2C
 //#define NOK5110
 //#define OLED096
-#define OLED_I2C
-#define OLED130
+//#define OLED_I2C
+//#define OLED130
 
 #ifdef LCD_I2C
   #ifndef LCD1602
@@ -82,7 +82,7 @@
 // Every changing of this Makefile will result in new compiling the whole
 // programs, if you call make or make upload.
 
-#define MCU atmega328p
+#define MCU atmega2560
 #define F_CPU 16000000UL
 
 // Select your language:
@@ -130,7 +130,7 @@
 // The WITH_UART option enables the software UART (TTL level output at Pin PC3, 26).
 // If the option is deselected, PC3 can be used as external voltage input with a
 // 10:1 resistor divider.
-//#define WITH_UART
+#define WITH_UART
 
 // The CAP_EMPTY_LEVEL  defines the empty voltage level for capacitors in mV.
 // Choose a higher value, if your Tester reports "Cell!" by unloading capacitors.
@@ -240,9 +240,9 @@
   The TPext can be used with a 10:1 resistor divider as external voltage probe up to 50V
 */
 
-#define ADC_PORT PORTC
-#define ADC_DDR DDRC
-#define ADC_PIN PINC
+#define ADC_PORT PORTF
+#define ADC_DDR DDRF
+#define ADC_PIN PINF
 #define TP1 0
 #define TP2 1
 #define TP3 2
@@ -450,7 +450,7 @@
   #define PROCESSOR_TYP 8
 #endif
 */
-#define PROCESSOR_TYP 328
+#define PROCESSOR_TYP 1280
 
 
 // automatic selection of right call type
@@ -1493,7 +1493,7 @@ start:
   #ifdef OLED096
     display.display();
   #endif
-
+/*
   TestKey = 1;
   while(TestKey) {
     TestKey = digitalRead(TestKeyPin);
@@ -1503,6 +1503,7 @@ start:
     TestKey = digitalRead(TestKeyPin);
     delay(100);
   }
+  */
   lcd_clear();
   delay(100);
 
